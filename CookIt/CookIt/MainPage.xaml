@@ -5,14 +5,15 @@
              x:Class="CookIt.MainPage">
 
     <StackLayout HorizontalOptions="FillAndExpand">
-        <!-- Place new controls here -->
+
+        <Image Source="cool_shiba.jpg" 
+               HorizontalOptions="FillAndExpand"
+               Scale="0.5"/>
+
         <Label x:Name="MainLabel"
-               Text="Curious camgirls Cruel and kind cherry boys" 
+               Text="Curious camgirls, cruel and kind cherry boys" 
                HorizontalOptions="Center"
                VerticalOptions="CenterAndExpand" />
-
-        <Button Text="Click me!"
-                Clicked="Button_Clicked"/>
     </StackLayout>
 
 </ContentPage>
