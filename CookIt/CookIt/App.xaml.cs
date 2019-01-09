@@ -1,3 +1,4 @@
+using CookIt.Resources.strings;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +12,9 @@ namespace CookIt
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+            AppResources.Culture = new System.Globalization.CultureInfo("en");
+            //TODO - create service to get culture info
+			MainPage = new NavigationPage(new MainPage());
 		}
 
 		protected override void OnStart ()

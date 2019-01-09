@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CookIt"
+             xmlns:strings="clr-namespace:CookIt.Resources.strings"
              x:Class="CookIt.MainPage">
 
     <StackLayout HorizontalOptions="FillAndExpand">
@@ -9,6 +10,12 @@
         <Image Source="cool_shiba.jpg" 
                HorizontalOptions="FillAndExpand"
                Scale="0.5"/>
+
+        <Button x:Name="RecipeSearchButton"
+                Clicked="RecipeSearchButton_Clicked"/>
+
+        <Button x:Name="ViewAllRecipesButton"
+                Clicked="ViewAllRecipes_Clicked"/>
 
         <Label x:Name="MainLabel"
                Text="Curious camgirls, cruel and kind cherry boys" 
