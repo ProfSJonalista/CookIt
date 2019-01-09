@@ -12,8 +12,9 @@ namespace CookIt
 		{
 			InitializeComponent();
 
-            AppResources.Culture = new System.Globalization.CultureInfo("en");
+            AppResources.Culture = new System.Globalization.CultureInfo("pl");
             //TODO - create service to get culture info
+            
 			MainPage = new NavigationPage(new MainPage());
 		}
 
