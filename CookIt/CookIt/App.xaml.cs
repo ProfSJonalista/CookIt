@@ -8,20 +8,35 @@ namespace CookIt
 {
 	public partial class App : Application
 	{
+        public static string DatabaseLocation = string.Empty;
+
 		public App ()
 		{
 			InitializeComponent();
 
+            //TODO - create service to get culture info
             var cultureInfo = new System.Globalization.CultureInfo("pl");
             Strings.Culture = cultureInfo;
             Ingredients.Culture = cultureInfo;
-
-            //TODO - create service to get culture info
             
 			MainPage = new NavigationPage(new MainPage());
 		}
 
-		protected override void OnStart ()
+        public App(string dbPath)
+        {
+            InitializeComponent();
+
+            //TODO - create service to get culture info
+            var cultureInfo = new System.Globalization.CultureInfo("pl");
+            Strings.Culture = cultureInfo;
+            Ingredients.Culture = cultureInfo;
+
+            DatabaseLocation = dbPath;
+
+            MainPage = new NavigationPage(new MainPage());
+        }
+
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}
