@@ -2,36 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CookIt.Views.IngredientChoosePage">
-    <ListView x:Name="MyListView"
+    <StackLayout x:Name="containerStackLayout"
+                 HorizontalOptions="FillAndExpand"
+                 Margin="20">
+
+        <Label x:Name="ChooseIngredientsLabel" 
+               FontSize="Medium"
+               TextColor="Black"/>
+        
+        <ListView x:Name="MyListView"
             ItemsSource="{Binding Ingredients}"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement"
-            HorizontalOptions="FillAndExpand"
-            Margin="20">
-
-        <!--Built in Cells-->
-        <!--<ListView.ItemTemplate>
-        <DataTemplate>
-            <TextCell Text="{Binding IngredientName}" />
-        </DataTemplate>
-    </ListView.ItemTemplate>-->
-
-        <!--Custom View Cells-->
-
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout HorizontalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout HorizontalOptions="FillAndExpand"
                                  Orientation="Horizontal">
-                        <Label  Text="Ingredient" />
-                        <Switch x:Name="filterSwitch"
+                            <Label  Text="{Binding Name}" />
+                            <Switch x:Name="filterSwitch"
                                 IsToggled="{Binding Filter}"/>
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
 
-    </ListView>
+        </ListView>
+        
+        <Button x:Name="SearchButton"
+                Clicked="SearchButton_Clicked"/>
+    </StackLayout>
 </ContentPage>
-
-<!--{Binding IngredientName}-->

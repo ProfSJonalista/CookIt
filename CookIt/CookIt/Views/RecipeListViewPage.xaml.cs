@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CookIt.Models.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -13,20 +14,11 @@ namespace CookIt.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RecipeListViewPage : ContentPage
     {
-        public ObservableCollection<string> Items { get; set; }
+        public ObservableCollection<IngredientViewModel> Items { get; set; }
 
         public RecipeListViewPage()
         {
             InitializeComponent();
-
-            Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
 			
 			MyListView.ItemsSource = Items;
         }
@@ -35,30 +27,12 @@ namespace CookIt.Views
         {
             InitializeComponent();
 
-            Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
-
             MyListView.ItemsSource = Items;
         }
 
-        public RecipeListViewPage(List<string> filterList)
+        public RecipeListViewPage(List<IngredientViewModel> filterList)
         {
             InitializeComponent();
-
-            Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
 
             MyListView.ItemsSource = Items;
         }

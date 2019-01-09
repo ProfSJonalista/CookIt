@@ -22,9 +22,6 @@ namespace CookIt
         private async void RecipeSearchButton_ClickedAsync(object sender, EventArgs e) => await Navigation.PushAsync(new IngredientChoosePage());
 
 
-        private void ViewAllRecipes_Clicked(object sender, EventArgs e)
-        {
-
-        }
+        private async void ViewAllRecipes_Clicked(object sender, EventArgs e) => await Navigation.PushAsync(new RecipeListViewPage());
     }
 }

@@ -61,11 +61,38 @@ namespace CookIt.Resources.strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose ingredients.
+        /// </summary>
+        internal static string ChooseIngredients {
+            get {
+                return ResourceManager.GetString("ChooseIngredients", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear all.
+        /// </summary>
+        internal static string ClearAll {
+            get {
+                return ResourceManager.GetString("ClearAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search recipes.
         /// </summary>
         internal static string RecipeSearch {
             get {
                 return ResourceManager.GetString("RecipeSearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Szukaj.
+        /// </summary>
+        internal static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
             }
         }
         
