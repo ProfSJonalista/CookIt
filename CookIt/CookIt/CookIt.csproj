@@ -15,17 +15,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\strings\AppResources.Designer.cs">
+    <Compile Update="Resources\strings\Strings.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>AppResources.resx</DependentUpon>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\strings\Ingredients.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Ingredients.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\strings\AppResources.resx">
+    <EmbeddedResource Update="Resources\strings\Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\strings\Ingredients.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Ingredients.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\IngredientChoosePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

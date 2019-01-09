@@ -15,8 +15,8 @@ namespace CookIt
 		{
 			InitializeComponent();
             
-            RecipeSearchButton.Text = AppResources.RecipeSearch;
-            ViewAllRecipesButton.Text = AppResources.ViewAllRecipes;
+            RecipeSearchButton.Text = Strings.RecipeSearch;
+            ViewAllRecipesButton.Text = Strings.ViewAllRecipes;
 		}
 
         private async void RecipeSearchButton_ClickedAsync(object sender, EventArgs e) => await Navigation.PushAsync(new IngredientChoosePage());
