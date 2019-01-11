@@ -28,24 +28,6 @@ namespace CookIt.Repository
             recipeId = 0;
         }
 
-        internal List<Recipe> GetRecipes(string cultureInfo)
-        {
-            List<Recipe> recipesToReturn = new List<Recipe>();
-
-            using (var db = new SQLiteConnection(App.DatabaseLocation))
-            {
-                recipesToReturn = db.Table<Recipe>().Where(recipe => recipe.ResourceCultureInfo.Equals(cultureInfo)).ToList();
-
-                recipesToReturn.ForEach(recipe =>
-                {
-                    recipe.Ingredients = db.Table<Ingredient>().Where(ingredient => ingredient.Recipe == recipe.Id).ToList();
-                    recipe.Steps = db.Table<Step>().Where(step => step.Recipe == recipe.Id).ToList();
-                });
-            }
-
-            return recipesToReturn;
-        }
-
         private int InsertToDB<T>(T ObjectToInsert)
         {
             using (var db = new SQLiteConnection(App.DatabaseLocation))
@@ -68,6 +50,22 @@ namespace CookIt.Repository
             }
         }
 
-        
+        internal List<Recipe> GetRecipes(string cultureInfo)
+        {
+            List<Recipe> recipesToReturn = new List<Recipe>();
+
+            using (var db = new SQLiteConnection(App.DatabaseLocation))
+            {
+                recipesToReturn = db.Table<Recipe>().Where(recipe => recipe.ResourceCultureInfo.Equals(cultureInfo)).ToList();
+
+                recipesToReturn.ForEach(recipe =>
+                {
+                    recipe.Ingredients = db.Table<Ingredient>().Where(ingredient => ingredient.Recipe == recipe.Id).ToList();
+                    recipe.Steps = db.Table<Step>().Where(step => step.Recipe == recipe.Id).ToList();
+                });
+            }
+
+            return recipesToReturn;
+        }
     }
 }

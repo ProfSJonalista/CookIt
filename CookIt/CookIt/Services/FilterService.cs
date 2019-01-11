@@ -11,10 +11,12 @@ namespace CookIt.Services
 {
     public class FilterService
     {
+        private RecipeService _recipeService;
         private DatabaseRepository _databaseRepository;
 
         public FilterService()
         {
+            _recipeService = new RecipeService();
             _databaseRepository = new DatabaseRepository();
         }
 
@@ -34,7 +36,7 @@ namespace CookIt.Services
                 });
             }
 
-            throw new NotImplementedException();
+            return _recipeService.GetRecipeViewModels(recipeEntitiesToFilter);
         }
     }
 }

@@ -21,8 +21,8 @@ namespace CookIt.Views
         public RecipeListViewPage()
         {
             InitializeComponent();
-			
-			MyListView.ItemsSource = Items;
+
+            MyListView.ItemsSource = Items;
         }
 
         public RecipeListViewPage(bool userFavorite)
@@ -36,6 +36,7 @@ namespace CookIt.Views
         {
             InitializeComponent();
             Items = _filterService.GetFilteredRecipes(filterList);
+            //TODO view the recipe
             MyListView.ItemsSource = Items;
         }
 
