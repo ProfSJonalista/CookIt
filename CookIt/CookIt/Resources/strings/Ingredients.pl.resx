@@ -123,7 +123,7 @@
   <data name="BakingSoda" xml:space="preserve">
     <value>Soda oczyszczona</value>
   </data>
-  <data name="BlueBerries" xml:space="preserve">
+  <data name="Blueberries" xml:space="preserve">
     <value>Jagody</value>
   </data>
   <data name="Butter" xml:space="preserve">
@@ -150,7 +150,10 @@
   <data name="Flour" xml:space="preserve">
     <value>Mąka</value>
   </data>
-  <data name="MapleSirup" xml:space="preserve">
+  <data name="Garlic" xml:space="preserve">
+    <value>Czosnek</value>
+  </data>
+  <data name="MapleSyrup" xml:space="preserve">
     <value>Syrop klonowy</value>
   </data>
   <data name="Milk" xml:space="preserve">

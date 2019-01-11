@@ -1,4 +1,5 @@
 using CookIt.Resources.strings;
+using CookIt.Services;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -9,6 +10,7 @@ namespace CookIt
 	public partial class App : Application
 	{
         public static string DatabaseLocation = string.Empty;
+        private RecipeMockService _recipeMockService = new RecipeMockService();
 
 		public App ()
 		{
@@ -18,7 +20,7 @@ namespace CookIt
             var cultureInfo = new System.Globalization.CultureInfo("pl");
             Strings.Culture = cultureInfo;
             Ingredients.Culture = cultureInfo;
-            
+
 			MainPage = new NavigationPage(new MainPage());
 		}
 
@@ -32,6 +34,8 @@ namespace CookIt
             Ingredients.Culture = cultureInfo;
 
             DatabaseLocation = dbPath;
+
+            _recipeMockService.SetDatabase();
 
             MainPage = new NavigationPage(new MainPage());
         }

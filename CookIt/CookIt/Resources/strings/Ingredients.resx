@@ -150,7 +150,10 @@
   <data name="Flour" xml:space="preserve">
     <value>Flour</value>
   </data>
-  <data name="MapleSirup" xml:space="preserve">
+  <data name="Garlic" xml:space="preserve">
+    <value>Garlic</value>
+  </data>
+  <data name="MapleSyrup" xml:space="preserve">
     <value>MapleSirup</value>
   </data>
   <data name="Milk" xml:space="preserve">

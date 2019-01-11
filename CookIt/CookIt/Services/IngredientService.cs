@@ -11,16 +11,16 @@ namespace CookIt.Services
 {
     public class IngredientService
     {
-        public List<IngredientViewModel> GetIngredientList()
+        public List<IngredientChooseViewModel> GetIngredientList()
         {
-            List<IngredientViewModel> ingredientVMList = new List<IngredientViewModel>();
+            List<IngredientChooseViewModel> ingredientVMList = new List<IngredientChooseViewModel>();
 
             ResourceManager ingredientResource = new ResourceManager(typeof(Ingredients));
-
             ResourceSet resourceSet = ingredientResource.GetResourceSet(Ingredients.Culture, true, true);
+
             foreach (DictionaryEntry entry in resourceSet)
             {
-                ingredientVMList.Add(new IngredientViewModel()
+                ingredientVMList.Add(new IngredientChooseViewModel()
                 {
                     ResourceKey = entry.Key.ToString(),
                     Name = entry.Value.ToString(),

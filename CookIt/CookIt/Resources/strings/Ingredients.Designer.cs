@@ -160,11 +160,20 @@ namespace CookIt.Resources.strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Garlic.
+        /// </summary>
+        internal static string Garlic {
+            get {
+                return ResourceManager.GetString("Garlic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MapleSirup.
         /// </summary>
-        internal static string MapleSirup {
+        internal static string MapleSyrup {
             get {
-                return ResourceManager.GetString("MapleSirup", resourceCulture);
+                return ResourceManager.GetString("MapleSyrup", resourceCulture);
             }
         }
         

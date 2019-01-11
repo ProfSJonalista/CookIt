@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CookIt.Models.ViewModels
 {
-    public class IngredientViewModel
+    public class IngredientChooseViewModel
     {
         public string ResourceKey { get; set; }
         public string Name { get; set; }

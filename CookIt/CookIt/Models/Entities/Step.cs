@@ -10,8 +10,9 @@ namespace CookIt.Models.Entities
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         [ForeignKey(typeof(Recipe))]
-        public int RecipeId { get; set; }
+        public int Recipe { get; set; }
+        public int StepNumber { get; set; }
         public string Description { get; set; }
-        public List<TimeSpan> TimeSpans { get; set; }
+        public string TimeSpans { get; set; }
     }
 }

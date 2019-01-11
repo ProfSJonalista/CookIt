@@ -19,7 +19,7 @@ namespace CookIt.Views
     {
         private IngredientService ingredientService;
 
-        public List<IngredientViewModel> IngredientList { get; set; }
+        public List<IngredientChooseViewModel> IngredientList { get; set; }
 
         public IngredientChoosePage()
         {

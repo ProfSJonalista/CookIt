@@ -1,4 +1,5 @@
 ﻿using CookIt.Models.ViewModels;
+using CookIt.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,7 +15,8 @@ namespace CookIt.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RecipeListViewPage : ContentPage
     {
-        public ObservableCollection<IngredientViewModel> Items { get; set; }
+        public List<RecipeViewModel> Items { get; set; }
+        private FilterService _filterService = new FilterService();
 
         public RecipeListViewPage()
         {
@@ -30,10 +32,10 @@ namespace CookIt.Views
             MyListView.ItemsSource = Items;
         }
 
-        public RecipeListViewPage(List<IngredientViewModel> filterList)
+        public RecipeListViewPage(List<IngredientChooseViewModel> filterList)
         {
             InitializeComponent();
-
+            Items = _filterService.GetFilteredRecipes(filterList);
             MyListView.ItemsSource = Items;
         }
 
