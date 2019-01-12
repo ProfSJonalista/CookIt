@@ -15,11 +15,6 @@
 
         <Button x:Name="ViewAllRecipesButton"
                 Clicked="ViewAllRecipes_Clicked"/>
-
-        <Label x:Name="MainLabel"
-               Text="Curious camgirls, cruel and kind cherry boys" 
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
     </StackLayout>
 
 </ContentPage>

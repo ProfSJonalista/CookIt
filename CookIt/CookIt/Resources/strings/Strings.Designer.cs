@@ -79,6 +79,60 @@ namespace CookIt.Resources.strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cook.
+        /// </summary>
+        internal static string Cook {
+            get {
+                return ResourceManager.GetString("Cook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingredients:.
+        /// </summary>
+        internal static string Ingredient {
+            get {
+                return ResourceManager.GetString("Ingredient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        internal static string Next {
+            get {
+                return ResourceManager.GetString("Next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No of portions:.
+        /// </summary>
+        internal static string NoOfPortions {
+            get {
+                return ResourceManager.GetString("NoOfPortions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preparation time:.
+        /// </summary>
+        internal static string PreparationTime {
+            get {
+                return ResourceManager.GetString("PreparationTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Previous.
+        /// </summary>
+        internal static string Previous {
+            get {
+                return ResourceManager.GetString("Previous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search recipes.
         /// </summary>
         internal static string RecipeSearch {
@@ -93,6 +147,15 @@ namespace CookIt.Resources.strings {
         internal static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Step {0} out of {1}.
+        /// </summary>
+        internal static string StepCounter {
+            get {
+                return ResourceManager.GetString("StepCounter", resourceCulture);
             }
         }
         

@@ -123,11 +123,32 @@
   <data name="ClearAll" xml:space="preserve">
     <value>Clear all</value>
   </data>
+  <data name="Cook" xml:space="preserve">
+    <value>Cook</value>
+  </data>
+  <data name="Ingredient" xml:space="preserve">
+    <value>Ingredients:</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="NoOfPortions" xml:space="preserve">
+    <value>No of portions:</value>
+  </data>
+  <data name="PreparationTime" xml:space="preserve">
+    <value>Preparation time:</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
   <data name="RecipeSearch" xml:space="preserve">
     <value>Search recipes</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Szukaj</value>
+  </data>
+  <data name="StepCounter" xml:space="preserve">
+    <value>Step {0} out of {1}</value>
   </data>
   <data name="ViewAllRecipes" xml:space="preserve">
     <value>View all recipes</value>

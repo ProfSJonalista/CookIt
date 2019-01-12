@@ -11,6 +11,7 @@ namespace CookIt.Services
 {
     public class FilterService
     {
+        private string _cultureInfo = Strings.Culture.ToString();
         private RecipeService _recipeService;
         private DatabaseRepository _databaseRepository;
 
@@ -22,20 +23,40 @@ namespace CookIt.Services
 
         internal List<RecipeViewModel> GetFilteredRecipes(List<IngredientChooseViewModel> filterList)
         {
-            var cultureInfo = Strings.Culture.ToString();
+            List<Recipe> recipeEntitiesToFilter = _databaseRepository.GetRecipes(_cultureInfo);
 
-            List<Recipe> recipeEntitiesToFilter = _databaseRepository.GetRecipes(cultureInfo);
-
-            if(filterList != null && filterList.Count > 0)
+            if (filterList != null && filterList.Count > 0)
             {
                 filterList.ForEach(filter =>
                 {
                     recipeEntitiesToFilter = recipeEntitiesToFilter
                     .Where(recipe => recipe.Ingredients
-                                     .Any(ingredient => ingredient.IngredientResourceKey.Equals(filter.ResourceKey))).ToList();
+                                     .Any(ingredient =>
+                                     {
+                                         var match = ingredient.IngredientResourceKey.Equals(filter.ResourceKey);
+                                         if (match)
+                                             ingredient.ForLater = true;
+
+                                         return match;
+                                     })).ToList();
                 });
             }
 
+            return _recipeService.GetRecipeViewModels(recipeEntitiesToFilter);
+        }
+
+        internal List<RecipeViewModel> GetFilteredRecipes(bool userFavourite)
+        {
+            List<Recipe> recipeEntitiesToFilter = _databaseRepository.GetRecipes(_cultureInfo);
+
+            recipeEntitiesToFilter = recipeEntitiesToFilter.Where(recipe => recipe.UserFavourite == userFavourite).ToList();
+
+            return _recipeService.GetRecipeViewModels(recipeEntitiesToFilter);
+        }
+
+        internal List<RecipeViewModel> GetUnfilteredRecipes()
+        {
+            List<Recipe> recipeEntitiesToFilter = _databaseRepository.GetRecipes(_cultureInfo);
             return _recipeService.GetRecipeViewModels(recipeEntitiesToFilter);
         }
     }

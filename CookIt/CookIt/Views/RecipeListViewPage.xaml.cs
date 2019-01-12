@@ -21,14 +21,14 @@ namespace CookIt.Views
         public RecipeListViewPage()
         {
             InitializeComponent();
-
+            Items = _filterService.GetUnfilteredRecipes();
             MyListView.ItemsSource = Items;
         }
 
         public RecipeListViewPage(bool userFavorite)
         {
             InitializeComponent();
-
+            Items = _filterService.GetFilteredRecipes(userFavorite);
             MyListView.ItemsSource = Items;
         }
 
@@ -36,7 +36,6 @@ namespace CookIt.Views
         {
             InitializeComponent();
             Items = _filterService.GetFilteredRecipes(filterList);
-            //TODO view the recipe
             MyListView.ItemsSource = Items;
         }
 
@@ -45,10 +44,10 @@ namespace CookIt.Views
             if (e.Item == null)
                 return;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
-
-            //Deselect Item
+            var recipeToTransfer = (RecipeViewModel)e.Item;
             ((ListView)sender).SelectedItem = null;
+
+            await Navigation.PushAsync(new RecipeViewPage(recipeToTransfer));
         }
     }
 }

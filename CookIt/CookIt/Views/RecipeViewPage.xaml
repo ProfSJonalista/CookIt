@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CookIt.Views.RecipeViewPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Grid HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0"
+                       x:Name="RecipeImage"
+                       Source="{Binding ImageName}"/>
+
+                <StackLayout Grid.Column="1"
+                             HorizontalOptions="StartAndExpand">
+                    <Label x:Name="NameLabel"
+                           Text="{Binding Name}"
+                           FontSize="Large"/>
+                    <Label x:Name="PreperationTimeLabel"/>
+
+                    <Label x:Name="NoOfPortionsLabel"/>
+
+                    <Label Grid.Column="1"
+                           x:Name="IngredientsLabel"
+                           FontSize="Medium"/>
+
+                    <ListView Grid.Column="0"
+                              Grid.ColumnSpan="2"
+                              x:Name="IngredientListView"
+                              ItemsSource="{Binding Ingredients}"
+                              ItemTapped="IngredientListView_ItemTapped"
+                              CachingStrategy="RecycleElement"
+                              Margin="5"
+                              HorizontalOptions="FillAndExpand">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout HorizontalOptions="FillAndExpand"
+                                 Orientation="Horizontal">
+                                        <Label  Text="{Binding Name}" />
+                                        <Switch IsToggled="{Binding ForLater}"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <Button Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            x:Name="CookButton"
+                            Clicked="CookButton_Clicked"/>
+                    
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
