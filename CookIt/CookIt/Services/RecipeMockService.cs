@@ -406,7 +406,7 @@ namespace CookIt.Services
                 GetIngredient(recipe, "1/4 szklanki kaszy jaglanej", "Millet"),
                 GetIngredient(recipe, "1 szklanka mleka kokosowego", "CoconutMilk"),
                 GetIngredient(recipe, "1/3 szklanki jagód", "Blueberries"),
-                GetIngredient(recipe, "syrop klonowy", "MapleSirup")
+                GetIngredient(recipe, "syrop klonowy", "MapleSyrup")
             };
         }
 

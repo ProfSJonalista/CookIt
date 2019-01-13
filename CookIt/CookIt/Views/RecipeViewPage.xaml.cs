@@ -1,5 +1,6 @@
 ﻿using CookIt.Models.ViewModels;
 using CookIt.Resources.strings;
+using CookIt.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,18 +16,26 @@ namespace CookIt.Views
 	public partial class RecipeViewPage : ContentPage
 	{
         private RecipeViewModel Recipe;
-
+        private RecipeService _recipeService;
 		public RecipeViewPage (RecipeViewModel recipe)
 		{
 			InitializeComponent();
 
             Recipe = recipe;
+            SetupUI();
+            _recipeService = new RecipeService();
+
+            BindingContext = Recipe;
+        }
+
+        private void SetupUI()
+        {
             IngredientsLabel.Text = Strings.Ingredient;
             PreperationTimeLabel.Text = Strings.PreparationTime + " " + Recipe.PreparationTime;
             NoOfPortionsLabel.Text = Strings.NoOfPortions + " " + Recipe.NoOfPortions;
             CookButton.Text = Strings.Cook;
-
-            BindingContext = Recipe;
+            SaveButton.Text = Strings.SaveForLater;
+            ClearAllButton.Text = Strings.ClearAll;
         }
 
         private void IngredientListView_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -38,5 +47,17 @@ namespace CookIt.Views
         }
 
         private async void CookButton_Clicked(object sender, EventArgs e) => await Navigation.PushAsync(new StepViewPage(Recipe.Steps));
+
+        //TODO - refresh view
+        private void ClearAllButton_Clicked(object sender, EventArgs e)
+        {
+            Recipe.Ingredients.ForEach(x => x.ForLater = false);
+
+            BindingContext = Recipe;
+
+            _recipeService.SaveIngredientsForLater(Recipe);
+        }
+
+        private void SaveButton_Clicked(object sender, EventArgs e) =>_recipeService.SaveIngredientsForLater(Recipe);
     }
 }

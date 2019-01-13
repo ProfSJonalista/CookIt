@@ -23,8 +23,8 @@ namespace CookIt.Views
 
             Steps = steps;
             CurrentStep = Steps.FirstOrDefault();
-            SetCounterLabel(CurrentStep.StepNumber);
             BindingContext = CurrentStep;
+            UpdateUI(CurrentStep.StepNumber);
 
             PreviousStepButton.Text = Strings.Previous;
             NextStepButton.Text = Strings.Next;
@@ -58,7 +58,7 @@ namespace CookIt.Views
                 var previousStepNumber = CurrentStep.StepNumber - 2;
                 CurrentStep = Steps[previousStepNumber];
                 BindingContext = CurrentStep;
-                SetCounterLabel(CurrentStep.StepNumber);
+                UpdateUI(CurrentStep.StepNumber);
             }
 
             AdjustButtons();
@@ -70,15 +70,40 @@ namespace CookIt.Views
             {
                 CurrentStep = Steps[CurrentStep.StepNumber];
                 BindingContext = CurrentStep;
-                SetCounterLabel(CurrentStep.StepNumber);
+                UpdateUI(CurrentStep.StepNumber);
             }
 
             AdjustButtons();
         }
 
-        private void SetCounterLabel(int stepNumber)
+        private void UpdateUI(int stepNumber)
         {
             CounterLabel.Text = String.Format(Strings.StepCounter, stepNumber, Steps.Count);
+            var timerSpanListVisible = CurrentStep.TimeSpans.Count > 0;
+
+            if (timerSpanListVisible)
+            {
+                TimerSpansList.HeightRequest = TimerSpansList.RowHeight * CurrentStep.TimeSpans.Count; /*(40 * CurrentStep.TimeSpans.Count) + (10 * CurrentStep.TimeSpans.Count);*/
+                TimerSpansList.IsVisible = timerSpanListVisible;
+                TimerSpansList.ItemsSource = CurrentStep.TimeSpans;
+            }
+            else
+            {
+                TimerSpansList.IsVisible = timerSpanListVisible;
+            }
+        }
+
+        private void TimerSpansList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item == null)
+                return;
+
+            ((ListView)sender).SelectedItem = null;
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

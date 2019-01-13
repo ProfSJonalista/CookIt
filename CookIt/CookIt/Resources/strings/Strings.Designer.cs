@@ -142,6 +142,15 @@ namespace CookIt.Resources.strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save for later.
+        /// </summary>
+        internal static string SaveForLater {
+            get {
+                return ResourceManager.GetString("SaveForLater", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Szukaj.
         /// </summary>
         internal static string Search {

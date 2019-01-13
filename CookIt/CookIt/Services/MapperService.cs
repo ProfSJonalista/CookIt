@@ -70,5 +70,25 @@ namespace CookIt.Services
                 IngredientResourceKey = ingredient.IngredientResourceKey
             };
         }
+
+        internal List<Ingredient> MapIngredientList(List<IngredientViewModel> ingredientsToMap)
+        {
+            List<Ingredient> ingredients = new List<Ingredient>();
+            ingredientsToMap.ForEach(x => ingredients.Add(MapIngredient(x)));
+
+            return ingredients;
+        }
+
+        private Ingredient MapIngredient(IngredientViewModel x)
+        {
+            return new Ingredient()
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Recipe = x.RecipeId,
+                ForLater = x.ForLater,
+                IngredientResourceKey = x.IngredientResourceKey
+            };
+        }
     }
 }

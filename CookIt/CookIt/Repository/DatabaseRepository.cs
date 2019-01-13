@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using CookIt.Models.ViewModels;
 
 namespace CookIt.Repository 
 {
@@ -66,6 +67,14 @@ namespace CookIt.Repository
             }
 
             return recipesToReturn;
+        }
+
+        internal void SaveIngredientsForLater(List<Ingredient> ingredients)
+        {
+            using (var db = new SQLiteConnection(App.DatabaseLocation))
+            {
+                ingredients.ForEach(x => db.Update(x));
+            }
         }
     }
 }

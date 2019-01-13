@@ -144,6 +144,9 @@
   <data name="RecipeSearch" xml:space="preserve">
     <value>Search recipes</value>
   </data>
+  <data name="SaveForLater" xml:space="preserve">
+    <value>Save for later</value>
+  </data>
   <data name="Search" xml:space="preserve">
     <value>Szukaj</value>
   </data>

@@ -169,7 +169,7 @@ namespace CookIt.Resources.strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MapleSirup.
+        ///   Looks up a localized string similar to Maple syrup.
         /// </summary>
         internal static string MapleSyrup {
             get {

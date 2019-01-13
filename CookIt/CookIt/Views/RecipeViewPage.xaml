@@ -48,11 +48,40 @@
                         </ListView.ItemTemplate>
                     </ListView>
 
+                    <StackLayout Grid.Column="0"
+                                 Grid.ColumnSpan="2">
+
+                        <Grid HorizontalOptions="CenterAndExpand"
+                              VerticalOptions="EndAndExpand"
+                              BackgroundColor="AliceBlue"
+                              MinimumHeightRequest="50">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Grid.Column="0"
+                                    x:Name="ClearAllButton"
+                                    WidthRequest="175"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="Fill"
+                                    Clicked="ClearAllButton_Clicked"/>
+
+                            <Button Grid.Column="1"
+                                    x:Name="SaveButton"
+                                    WidthRequest="175"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="Fill"
+                                    Clicked="SaveButton_Clicked"/>
+                        </Grid>
+                    </StackLayout>
+
                     <Button Grid.Column="0"
                             Grid.ColumnSpan="2"
+                            VerticalOptions="EndAndExpand"
                             x:Name="CookButton"
                             Clicked="CookButton_Clicked"/>
-                    
+
                 </StackLayout>
             </Grid>
         </StackLayout>

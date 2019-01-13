@@ -12,11 +12,33 @@
             <Label x:Name="StepDescriptionLabel"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="FillAndExpand"
-                   Text="{Binding Description}"
-                   VerticalTextAlignment="Center"/>
+                   Text="{Binding Description}"/>
 
-            <Grid HorizontalOptions="CenterAndExpand"
-                  VerticalOptions="EndAndExpand">
+            <ListView x:Name="TimerSpansList"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      BackgroundColor="AliceBlue"
+                      HasUnevenRows="True"
+                      SeparatorVisibility="None"
+                      RowHeight="40"
+                      ItemTapped="TimerSpansList_ItemTapped">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="Some cool label"/>
+                                <Button Clicked="Button_Clicked"
+                                            Text="TimerButton"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid x:Name="ButtonGrid"
+                  HorizontalOptions="CenterAndExpand"
+                  VerticalOptions="End">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
