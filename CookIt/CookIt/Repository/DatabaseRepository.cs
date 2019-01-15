@@ -6,7 +6,7 @@ using System.Text;
 using System.Linq;
 using CookIt.Models.ViewModels;
 
-namespace CookIt.Repository 
+namespace CookIt.Repository
 {
     public class DatabaseRepository
     {
@@ -71,9 +71,14 @@ namespace CookIt.Repository
 
         internal void SaveIngredientsForLater(List<Ingredient> ingredients)
         {
+            ingredients.ForEach(x => Update(x));
+        }
+
+        public void Update<T>(T objectToUpdate)
+        {
             using (var db = new SQLiteConnection(App.DatabaseLocation))
             {
-                ingredients.ForEach(x => db.Update(x));
+                db.Update(objectToUpdate);
             }
         }
     }

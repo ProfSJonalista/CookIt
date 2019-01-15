@@ -126,8 +126,14 @@
   <data name="Cook" xml:space="preserve">
     <value>Cook</value>
   </data>
+  <data name="Favourite" xml:space="preserve">
+    <value>Favourite</value>
+  </data>
   <data name="Ingredient" xml:space="preserve">
     <value>Ingredients:</value>
+  </data>
+  <data name="MainPage" xml:space="preserve">
+    <value>Main page</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Next</value>
@@ -144,16 +150,25 @@
   <data name="RecipeSearch" xml:space="preserve">
     <value>Search recipes</value>
   </data>
+  <data name="Saved" xml:space="preserve">
+    <value>Saved</value>
+  </data>
   <data name="SaveForLater" xml:space="preserve">
     <value>Save for later</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Szukaj</value>
   </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Ustawienia</value>
+  </data>
   <data name="StepCounter" xml:space="preserve">
     <value>Step {0} out of {1}</value>
   </data>
   <data name="ViewAllRecipes" xml:space="preserve">
     <value>View all recipes</value>
+  </data>
+  <data name="NoRecipes" xml:space="preserve">
+    <value>No recipes</value>
   </data>
 </root>

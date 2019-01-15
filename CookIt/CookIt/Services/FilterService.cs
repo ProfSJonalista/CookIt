@@ -45,11 +45,12 @@ namespace CookIt.Services
             return _recipeService.GetRecipeViewModels(recipeEntitiesToFilter);
         }
 
-        internal List<RecipeViewModel> GetFilteredRecipes(bool userFavourite)
+        internal List<RecipeViewModel> GetSavedForLaterRecipes(bool userChoice)
         {
             List<Recipe> recipeEntitiesToFilter = _databaseRepository.GetRecipes(_cultureInfo);
 
-            recipeEntitiesToFilter = recipeEntitiesToFilter.Where(recipe => recipe.UserFavourite == userFavourite).ToList();
+            recipeEntitiesToFilter = recipeEntitiesToFilter.Where(recipe => 
+                                                recipe.Ingredients.Any(ingredient => ingredient.ForLater == userChoice)).ToList();
 
             return _recipeService.GetRecipeViewModels(recipeEntitiesToFilter);
         }

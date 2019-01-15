@@ -25,7 +25,6 @@ namespace CookIt.Services
                 NoOfPortions = recipe.NoOfPortions,
                 ImageName = recipe.ImageName,
                 PreparationTime = recipe.PreparationTime,
-                UserFavourite = recipe.UserFavourite,
                 Steps = MapStepList(recipe.Steps),
                 Ingredients = MapIngredientList(recipe.Ingredients)
             };
@@ -68,6 +67,18 @@ namespace CookIt.Services
                 Name = ingredient.Name,
                 ForLater = ingredient.ForLater,
                 IngredientResourceKey = ingredient.IngredientResourceKey
+            };
+        }
+
+        internal Recipe MapRecipe(RecipeViewModel recipe)
+        {
+            return new Recipe()
+            {
+                Id = recipe.Id,
+                Name = recipe.Name,
+                NoOfPortions = recipe.NoOfPortions,
+                ImageName = recipe.ImageName,
+                PreparationTime = recipe.PreparationTime
             };
         }
 

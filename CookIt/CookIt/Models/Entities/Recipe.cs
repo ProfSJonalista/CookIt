@@ -16,7 +16,6 @@ namespace CookIt.Models.Entities
         public int NoOfPortions { get; set; }
         public string ImageName { get; set; }
         public string PreparationTime { get; set; }
-        public bool UserFavourite { get; set; }
         [OneToMany]
         public List<Step> Steps { get; set; }
         [OneToMany]

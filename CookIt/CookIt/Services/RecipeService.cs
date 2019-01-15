@@ -33,5 +33,10 @@ namespace CookIt.Services
         {
             _databaseRepository.SaveIngredientsForLater(_mapperService.MapIngredientList(recipeViewModel.Ingredients));
         }
+
+        internal void Update(RecipeViewModel recipe)
+        {
+            _databaseRepository.Update(_mapperService.MapRecipe(recipe));
+        }
     }
 }

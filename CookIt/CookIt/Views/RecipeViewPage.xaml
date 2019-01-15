@@ -4,7 +4,8 @@
              x:Class="CookIt.Views.RecipeViewPage">
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <Grid HorizontalOptions="FillAndExpand">
+            <Grid x:Name="RecipeGrid"
+                  HorizontalOptions="FillAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>

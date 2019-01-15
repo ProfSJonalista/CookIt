@@ -8,11 +8,11 @@ using System.Text;
 
 namespace CookIt.Services
 {
-    public class RecipeMockService
+    public class DatabaseInitiateService
     {
         private DatabaseRepository _databaseRepository;
 
-        public RecipeMockService()
+        public DatabaseInitiateService()
         {
             _databaseRepository = new DatabaseRepository();
         }
@@ -50,7 +50,7 @@ namespace CookIt.Services
         #region recipes
         private Recipe GetRecipe1PL()
         {
-            Recipe recipe = GetRecipe("pl", "Makaron z tuńczykiem i oliwkami", 2, "25 minut", "foto_1.jpg", false);
+            Recipe recipe = GetRecipe("pl", "Makaron z tuńczykiem i oliwkami", 2, "25 minut", "foto_1.jpg");
             recipe.Ingredients = GetIngredients1PL(recipe);
             recipe.Steps = GetSteps1PL(recipe);
 
@@ -93,7 +93,7 @@ namespace CookIt.Services
 
         private Recipe GetRecipe1EN()
         {
-            Recipe recipe = GetRecipe("en", "Pasta with tuna and olives", 2, "25 minutes", "foto_1.jpg", false);
+            Recipe recipe = GetRecipe("en", "Pasta with tuna and olives", 2, "25 minutes", "foto_1.jpg");
             recipe.Ingredients = GetIngredients1EN(recipe);
             recipe.Steps = GetSteps1EN(recipe);
 
@@ -136,7 +136,7 @@ namespace CookIt.Services
 
         private Recipe GetRecipe2PL()
         {
-            Recipe recipe = GetRecipe("pl", "Schab z suszonymi pomidorami", 4, "1h 30 min", "foto_2.jpg", false);
+            Recipe recipe = GetRecipe("pl", "Schab z suszonymi pomidorami", 4, "1h 30 min", "foto_2.jpg");
             recipe.Ingredients = GetIngredients2PL(recipe);
             recipe.Steps = GetSteps2PL(recipe);
 
@@ -176,7 +176,7 @@ namespace CookIt.Services
 
         private Recipe GetRecipe2EN()
         {
-            Recipe recipe = GetRecipe("en", "Pork loin with sun-dried tomatoes", 4, "1h 30 min", "foto_2.jpg", false);
+            Recipe recipe = GetRecipe("en", "Pork loin with sun-dried tomatoes", 4, "1h 30 min", "foto_2.jpg");
             recipe.Ingredients = GetIngredients2EN(recipe);
             recipe.Steps = GetSteps2PL(recipe);
 
@@ -216,7 +216,7 @@ namespace CookIt.Services
 
         private Recipe GetRecipe3PL()
         {
-            Recipe recipe = GetRecipe("pl", "Makaron z łososiem i cukinią", 4, "40 min", "foto_3.jpg", false);
+            Recipe recipe = GetRecipe("pl", "Makaron z łososiem i cukinią", 4, "40 min", "foto_3.jpg");
             recipe.Ingredients = GetIngredients3PL(recipe);
             recipe.Steps = GetSteps3PL(recipe);
 
@@ -259,7 +259,7 @@ namespace CookIt.Services
 
         private Recipe GetRecipe3EN()
         {
-            Recipe recipe = GetRecipe("en", "Pasta with salmon and zucchini", 4, "40 min", "foto_3.jpg", false);
+            Recipe recipe = GetRecipe("en", "Pasta with salmon and zucchini", 4, "40 min", "foto_3.jpg");
             recipe.Ingredients = GetIngredients3EN(recipe);
             recipe.Steps = GetSteps3EN(recipe);
 
@@ -302,7 +302,7 @@ namespace CookIt.Services
 
         private Recipe GetRecipe4PL()
         {
-            Recipe recipe = GetRecipe("pl", "Ciasteczka z czekoladą", 13, "50 min", "foto_4.jpg", false);
+            Recipe recipe = GetRecipe("pl", "Ciasteczka z czekoladą", 13, "50 min", "foto_4.jpg");
             recipe.Ingredients = GetIngredients4PL(recipe);
             recipe.Steps = GetSteps4PL(recipe);
 
@@ -347,7 +347,7 @@ namespace CookIt.Services
 
         private Recipe GetRecipe4EN()
         {
-            Recipe recipe = GetRecipe("en", "Cookies with chocolate", 13, "50 min", "foto_4.jpg", false);
+            Recipe recipe = GetRecipe("en", "Cookies with chocolate", 13, "50 min", "foto_4.jpg");
             recipe.Ingredients = GetIngredients4EN(recipe);
             recipe.Steps = GetSteps4EN(recipe);
 
@@ -392,7 +392,7 @@ namespace CookIt.Services
 
         private Recipe GetRecipe5PL()
         {
-            Recipe recipe = GetRecipe("pl", "Jaglanka z jagodami", 1, "30 min", "foto_5.jpg", false);
+            Recipe recipe = GetRecipe("pl", "Jaglanka z jagodami", 1, "30 min", "foto_5.jpg");
             recipe.Ingredients = GetIngredients5PL(recipe);
             recipe.Steps = GetSteps5PL(recipe);
 
@@ -428,7 +428,7 @@ namespace CookIt.Services
 
         private Recipe GetRecipe5EN()
         {
-            Recipe recipe = GetRecipe("en", "Jaglanka with blueberries", 1, "30 min", "foto_5.jpg", false);
+            Recipe recipe = GetRecipe("en", "Jaglanka with blueberries", 1, "30 min", "foto_5.jpg");
             recipe.Ingredients = GetIngredients5EN(recipe);
             recipe.Steps = GetSteps5EN(recipe);
 
@@ -461,7 +461,7 @@ namespace CookIt.Services
         }
         #endregion
 
-        private Recipe GetRecipe(string CultureCode, string Name, int NoOfPortions, string PreparationTime, string ImageName, bool UserFavourite)
+        private Recipe GetRecipe(string CultureCode, string Name, int NoOfPortions, string PreparationTime, string ImageName)
         {
             return new Recipe()
             {
@@ -469,8 +469,7 @@ namespace CookIt.Services
                 Name = Name,
                 NoOfPortions = NoOfPortions,
                 ImageName = ImageName,
-                PreparationTime = PreparationTime,
-                UserFavourite = UserFavourite
+                PreparationTime = PreparationTime
             };
         }
 

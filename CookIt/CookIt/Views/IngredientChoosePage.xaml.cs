@@ -24,7 +24,6 @@ namespace CookIt.Views
         public IngredientChoosePage()
         {
             InitializeComponent();
-            NavigationPage.SetHasBackButton(this, false);
 
             SetComponents();
 

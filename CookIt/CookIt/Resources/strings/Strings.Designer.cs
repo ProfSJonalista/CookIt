@@ -88,11 +88,29 @@ namespace CookIt.Resources.strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Favourite.
+        /// </summary>
+        internal static string Favourite {
+            get {
+                return ResourceManager.GetString("Favourite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingredients:.
         /// </summary>
         internal static string Ingredient {
             get {
                 return ResourceManager.GetString("Ingredient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main page.
+        /// </summary>
+        internal static string MainPage {
+            get {
+                return ResourceManager.GetString("MainPage", resourceCulture);
             }
         }
         
@@ -111,6 +129,15 @@ namespace CookIt.Resources.strings {
         internal static string NoOfPortions {
             get {
                 return ResourceManager.GetString("NoOfPortions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No recipes.
+        /// </summary>
+        internal static string NoRecipes {
+            get {
+                return ResourceManager.GetString("NoRecipes", resourceCulture);
             }
         }
         
@@ -142,6 +169,15 @@ namespace CookIt.Resources.strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Saved.
+        /// </summary>
+        internal static string Saved {
+            get {
+                return ResourceManager.GetString("Saved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save for later.
         /// </summary>
         internal static string SaveForLater {
@@ -156,6 +192,15 @@ namespace CookIt.Resources.strings {
         internal static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ustawienia.
+        /// </summary>
+        internal static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
             }
         }
         
