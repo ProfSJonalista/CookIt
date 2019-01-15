@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CookIt.Models.ViewModels;
+using CookIt.Resources.strings;
+using CookIt.Services;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -13,54 +16,47 @@ namespace CookIt.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RecipeListViewPage : ContentPage
     {
-        public ObservableCollection<string> Items { get; set; }
+        public List<RecipeViewModel> Items { get; set; }
+        private FilterService _filterService = new FilterService();
 
         public RecipeListViewPage()
         {
             InitializeComponent();
-
-            Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
-			
-			MyListView.ItemsSource = Items;
+            Items = _filterService.GetUnfilteredRecipes();
+            MyListView.ItemsSource = Items;
+            SetItemVisibility();
         }
 
-        public RecipeListViewPage(bool userFavorite)
+        public RecipeListViewPage(bool userChoice)
         {
             InitializeComponent();
-
-            Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
-
+            Items = _filterService.GetSavedForLaterRecipes(userChoice);
             MyListView.ItemsSource = Items;
+            SetItemVisibility();
         }
 
-        public RecipeListViewPage(List<string> filterList)
+        private void SetItemVisibility()
+        {
+            if(Items == null || Items.Count == 0)
+            {
+                NoRecipeLabel.IsVisible = true;
+                NoRecipeLabel.Text = Strings.NoRecipes;
+
+                MyListView.IsVisible = false;
+            }
+            else
+            {
+                NoRecipeLabel.IsVisible = false;
+                MyListView.IsVisible = true;
+            }
+        }
+
+        public RecipeListViewPage(List<IngredientChooseViewModel> filterList)
         {
             InitializeComponent();
-
-            Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
-
+            Items = _filterService.GetFilteredRecipes(filterList);
             MyListView.ItemsSource = Items;
+            SetItemVisibility();
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -68,10 +64,10 @@ namespace CookIt.Views
             if (e.Item == null)
                 return;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
-
-            //Deselect Item
+            var recipeToTransfer = (RecipeViewModel)e.Item;
             ((ListView)sender).SelectedItem = null;
+
+            await Navigation.PushAsync(new RecipeViewPage(recipeToTransfer));
         }
     }
 }

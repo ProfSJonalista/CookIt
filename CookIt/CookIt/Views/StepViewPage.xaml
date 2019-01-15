@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CookIt.Views.StepViewPage">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+
+            <Label x:Name="CounterLabel"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="Large"/>
+
+            <Label x:Name="StepDescriptionLabel"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   Text="{Binding Description}"/>
+
+            <ListView x:Name="TimerSpansList"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      BackgroundColor="AliceBlue"
+                      HasUnevenRows="True"
+                      SeparatorVisibility="None"
+                      RowHeight="40"
+                      ItemTapped="TimerSpansList_ItemTapped">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="Some cool label"/>
+                                <Button Clicked="Button_Clicked"
+                                            Text="TimerButton"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid x:Name="ButtonGrid"
+                  HorizontalOptions="CenterAndExpand"
+                  VerticalOptions="End">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0"
+                        WidthRequest="175"
+                        HorizontalOptions="End"
+                        x:Name="PreviousStepButton"
+                        Clicked="PreviousStepButton_Clicked"/>
+
+                <Button Grid.Column="1"
+                        WidthRequest="175"
+                        HorizontalOptions="Start"
+                        x:Name="NextStepButton"
+                        Clicked="NextStepButton_Clicked"/>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

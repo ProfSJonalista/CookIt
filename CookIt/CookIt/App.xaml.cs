@@ -1,36 +1,59 @@
 using CookIt.Resources.strings;
+using CookIt.Services;
+using CookIt.Views.Menu;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace CookIt
 {
-	public partial class App : Application
-	{
-		public App ()
-		{
-			InitializeComponent();
+    public partial class App : Application
+    {
+        public static string DatabaseLocation = string.Empty;
+        private DatabaseInitiateService _databaseInitiateService = new DatabaseInitiateService();
 
-            AppResources.Culture = new System.Globalization.CultureInfo("pl");
+        public App()
+        {
+            InitializeComponent();
+
             //TODO - create service to get culture info
-            
-			MainPage = new NavigationPage(new MainPage());
-		}
+            var cultureInfo = new System.Globalization.CultureInfo("pl");
+            Strings.Culture = cultureInfo;
+            Ingredients.Culture = cultureInfo;
 
-		protected override void OnStart ()
-		{
-			// Handle when your app starts
-		}
+            MainPage = new MainMasterDetail();
+        }
 
-		protected override void OnSleep ()
-		{
-			// Handle when your app sleeps
-		}
+        public App(string dbPath)
+        {
+            InitializeComponent();
 
-		protected override void OnResume ()
-		{
-			// Handle when your app resumes
-		}
-	}
+            //TODO - create service to get culture info
+            var cultureInfo = new System.Globalization.CultureInfo("pl");
+            Strings.Culture = cultureInfo;
+            Ingredients.Culture = cultureInfo;
+
+            DatabaseLocation = dbPath;
+
+            _databaseInitiateService.SetDatabase();
+
+            MainPage = new MainMasterDetail();
+        }
+
+        protected override void OnStart()
+        {
+            // Handle when your app starts
+        }
+
+        protected override void OnSleep()
+        {
+            // Handle when your app sleeps
+        }
+
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
+        }
+    }
 }
