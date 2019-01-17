@@ -18,10 +18,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\foto_1.jpg" />
-    <EmbeddedResource Include="Resources\drawable\foto_3.jpg" />
-    <EmbeddedResource Include="Resources\drawable\foto_4.jpg" />
-    <EmbeddedResource Include="Resources\drawable\foto_5.jpg" />
+    <EmbeddedResource Include="Resources\drawable\foto_1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\drawable\foto_3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\drawable\foto_4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\drawable\foto_5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -52,6 +60,7 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\strings\Ingredients.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Ingredients.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\IngredientChoosePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -79,6 +88,9 @@
   <ItemGroup>
     <None Update="Resources\drawable\cool_shiba.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\drawable\foto_2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 </Project>

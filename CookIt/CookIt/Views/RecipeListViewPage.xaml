@@ -7,7 +7,7 @@
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="CenterAndExpand"
                FontSize="Large"/>
-        
+
         <ListView x:Name="MyListView"
             ItemsSource="{Binding Items}"
             ItemTapped="Handle_ItemTapped"
@@ -16,23 +16,11 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal">
-                                <!--TODO image isn't showing - fix-->
-                                <Image Source="{Binding ImageName}"
-                                   Scale="0.1"/>
-                                <Label Text="{Binding Name}" 
-                                   TextColor="Red"/>
-                                <Label Text="{Binding PreparationTime}"
-                                   HorizontalOptions="EndAndExpand"
-                                   TextColor="Black"/>
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
+                    <ImageCell ImageSource="{Binding ImageName}" 
+                               Text="{Binding Name}"
+                               Detail="{Binding PreparationTime}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
-
 </ContentPage>

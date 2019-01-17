@@ -30,9 +30,9 @@ namespace CookIt.Views
 
         private void SetupUI()
         {
-            IngredientsLabel.Text = Strings.Ingredient;
             PreperationTimeLabel.Text = Strings.PreparationTime + " " + Recipe.PreparationTime;
             NoOfPortionsLabel.Text = Strings.NoOfPortions + " " + Recipe.NoOfPortions;
+            IngredientsLabel.Text = Strings.Ingredient;
             CookButton.Text = Strings.Cook;
             SaveButton.Text = Strings.SaveForLater;
             ClearAllButton.Text = Strings.ClearAll;

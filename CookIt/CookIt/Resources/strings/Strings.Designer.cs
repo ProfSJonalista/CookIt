@@ -187,7 +187,7 @@ namespace CookIt.Resources.strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Szukaj.
+        ///   Looks up a localized string similar to Search.
         /// </summary>
         internal static string Search {
             get {
@@ -196,7 +196,7 @@ namespace CookIt.Resources.strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ustawienia.
+        ///   Looks up a localized string similar to Settings.
         /// </summary>
         internal static string Settings {
             get {

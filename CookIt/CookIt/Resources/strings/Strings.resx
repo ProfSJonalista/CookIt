@@ -157,10 +157,10 @@
     <value>Save for later</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Szukaj</value>
+    <value>Search</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Ustawienia</value>
+    <value>Settings</value>
   </data>
   <data name="StepCounter" xml:space="preserve">
     <value>Step {0} out of {1}</value>

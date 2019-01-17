@@ -214,7 +214,7 @@ namespace CookIt.Resources.strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OliveOil.
+        ///   Looks up a localized string similar to Olive oil.
         /// </summary>
         internal static string OliveOil {
             get {
