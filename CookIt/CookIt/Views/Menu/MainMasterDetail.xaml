@@ -2,12 +2,13 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CookIt.Views.Menu.MainMasterDetail"
-             xmlns:pages="clr-namespace:CookIt.Views.Menu">
+             xmlns:pages="clr-namespace:CookIt.Views.Menu"
+             >
   <MasterDetailPage.Master>
     <pages:MainMasterDetailMaster x:Name="MasterPage" />
   </MasterDetailPage.Master>
   <MasterDetailPage.Detail>
-    <NavigationPage>
+        <NavigationPage BarBackgroundColor="#DB5701" BarTextColor="White">
       <x:Arguments>
         <pages:MainMasterDetailDetail />
       </x:Arguments>

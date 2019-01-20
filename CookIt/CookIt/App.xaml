@@ -1,8 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CookIt.App">
+             x:Class="CookIt.App">            
 	<Application.Resources>
-    
-	</Application.Resources>
+        <ResourceDictionary>
+            
+            <Color x:Key="bgColor">#F4EED3</Color>
+            
+            <Style x:Key="PageStyle" TargetType="ContentPage">                
+                <Setter Property="BackgroundColor" Value="{StaticResource bgColor}" />
+            </Style>
+
+
+            <Style x:Key="StartPageButtons" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#E5D89E"/>
+                <Setter Property="Padding" Value="8"/>
+                <Setter Property="Margin" Value="20, 10, 20, 10"/>
+                <Setter Property="BorderRadius" Value="10"/>
+                <Setter Property="BorderColor" Value="#C9B869"/>
+                <Setter Property="BorderWidth" Value="3"/>
+                
+            </Style>    
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
