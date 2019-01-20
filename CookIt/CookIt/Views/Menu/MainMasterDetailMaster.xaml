@@ -2,29 +2,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CookIt.Views.Menu.MainMasterDetailMaster"
-             Title="Master">
+             Title="Master"             
+             >
   <StackLayout>
-    <ListView x:Name="MenuItemsListView"
-              SeparatorVisibility="None"
+        <ListView x:Name="MenuItemsListView"
+              SeparatorVisibility="Default"
               HasUnevenRows="true"
-              ItemsSource="{Binding MenuItems}">
-      <ListView.Header>
-        <Grid BackgroundColor="#03A9F4">
+              BackgroundColor="#E5D89E"              
+              ItemsSource="{Binding MenuItems}" >
+
+            <ListView.Header>
+          <Grid BackgroundColor="#DB5701">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="10"/>
           </Grid.ColumnDefinitions>
           <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="10"/>
           </Grid.RowDefinitions>
           <Label
               Grid.Column="1"
-              Grid.Row="2"
-              Text="AppName"
+              Grid.Row="1"
+              VerticalTextAlignment="Center"
+              Text="CookIt"
+              TextColor="White"                
+              FontSize="30"    
+              FontAttributes="Bold"
               Style="{DynamicResource SubtitleStyle}"/>
         </Grid>
       </ListView.Header>
@@ -33,7 +40,7 @@
           <ViewCell>
             <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
               <Label VerticalOptions="FillAndExpand" 
-                    VerticalTextAlignment="Center" 
+                    VerticalTextAlignment="Center"                     
                     Text="{Binding Title}" 
                     FontSize="24"/>
             </StackLayout>

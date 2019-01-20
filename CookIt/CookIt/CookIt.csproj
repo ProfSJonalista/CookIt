@@ -15,6 +15,7 @@
     <None Remove="Resources\drawable\foto_3.jpg" />
     <None Remove="Resources\drawable\foto_4.jpg" />
     <None Remove="Resources\drawable\foto_5.jpg" />
+    <None Remove="Resources\drawable\logo.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +30,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\drawable\foto_5.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\drawable\logo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </EmbeddedResource>
   </ItemGroup>
 
