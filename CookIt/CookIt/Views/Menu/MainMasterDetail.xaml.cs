@@ -29,7 +29,12 @@ namespace CookIt.Views.Menu
             var page = (Page)Activator.CreateInstance(item.TargetType);
             page.Title = item.Title;
 
-            Detail = new NavigationPage(GetDetailPage(item.Id));
+            Detail = new NavigationPage(GetDetailPage(item.Id))
+            {
+                BarBackgroundColor = Color.FromHex("#DB5701"),
+                BarTextColor = Color.White
+            };
+
             IsPresented = false;
 
             MasterPage.ListView.SelectedItem = null;

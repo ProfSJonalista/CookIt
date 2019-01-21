@@ -171,4 +171,13 @@
   <data name="NoRecipes" xml:space="preserve">
     <value>No recipes</value>
   </data>
+  <data name="ChooseLang" xml:space="preserve">
+    <value>Wybierz język</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Polish" xml:space="preserve">
+    <value>Polski</value>
+  </data>
 </root>

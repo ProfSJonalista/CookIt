@@ -4,9 +4,48 @@
              x:Class="CookIt.Views.SettingsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="0"
+                       x:Name="ChooseLanguageLabel" 
+                       HorizontalOptions="CenterAndExpand"
+                       FontSize="Large"/>
+                
+                <Label Grid.Column="0"
+                       Grid.Row="1"
+                       x:Name="EnglishLangLabel"
+                       HorizontalOptions="Start"/>
+                
+                <Switch Grid.Column="1"
+                        Grid.Row="1"
+                        x:Name="EnglishLangSwitch"
+                        HorizontalOptions="CenterAndExpand"
+                        PropertyChanged="Switch_PropertyChanged"/>
+
+                <Label Grid.Column="0"
+                       Grid.Row="2"
+                       x:Name="PolishLangLabel"
+                       HorizontalOptions="Start"/>
+
+                <Switch Grid.Column="1"
+                        Grid.Row="2"
+                        x:Name="PolishLangSwitch"
+                        HorizontalOptions="CenterAndExpand"
+                        PropertyChanged="Switch_PropertyChanged"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
