@@ -2,17 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CookIt.Views.Menu.MainMasterDetailMaster"
-             Title="Master"             
-             >
-  <StackLayout>
+             Title="Master" >
+
+    <StackLayout>
         <ListView x:Name="MenuItemsListView"
               SeparatorVisibility="Default"
               HasUnevenRows="true"
-              BackgroundColor="#E5D89E"              
-              ItemsSource="{Binding MenuItems}" >
+              BackgroundColor="#F4EED3"              
+              ItemsSource="{Binding MenuItems}"  >             
 
             <ListView.Header>
-          <Grid BackgroundColor="#DB5701">
+                <Grid BackgroundColor="#DB5701" >
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>

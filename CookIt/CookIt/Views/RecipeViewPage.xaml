@@ -82,7 +82,7 @@
                                     VerticalOptions="Fill"
                                     Margin="0, 10, 5, 5"
                                     Clicked="ClearAllButton_Clicked"
-                                    Style="{StaticResource RecipeViewButtons}"/>
+                                    Style="{StaticResource ButtonsWithoutMargin}"/>
 
                             <Button Grid.Column="1"
                                     x:Name="SaveButton"
@@ -91,7 +91,7 @@
                                     VerticalOptions="Fill"
                                     Margin="5, 10, 0, 5"
                                     Clicked="SaveButton_Clicked"
-                                    Style="{StaticResource RecipeViewButtons}"/>
+                                    Style="{StaticResource ButtonsWithoutMargin}"/>
                         </Grid>
                     </StackLayout>
 
@@ -104,7 +104,8 @@
                             Padding="3"                        
                             BorderRadius="10"
                             BorderColor="#CCA300"
-                            BorderWidth="3"/>
+                            BorderWidth="3"
+                            FontAttributes="Bold"/>
 
                 </StackLayout>
             </Grid>
