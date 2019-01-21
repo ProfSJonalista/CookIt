@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CookIt.Views.RecipeViewPage">
+             x:Class="CookIt.Views.RecipeViewPage"
+             Style="{StaticResource PageStyle}">
     <ContentPage.Content>
-        <StackLayout Margin="20">
+        <StackLayout Margin="20, 15, 20, 15">
             <Grid x:Name="RecipeGrid"
                   HorizontalOptions="FillAndExpand">
                 <Grid.ColumnDefinitions>
@@ -20,74 +21,93 @@
 
                 <StackLayout Grid.Column="1"
                              HorizontalOptions="StartAndExpand">
-                        <Label x:Name="NameLabel"
+                    <Label x:Name="NameLabel"
                            Text="{Binding Name}"
-                           FontSize="Large"/>
-                        <Label x:Name="PreperationTimeLabel"/>
+                           FontSize="Large"
+                           FontAttributes="Bold"
+                           TextColor="#DB5701"
+                           Margin="0, 0, 0, 15" />
+                           
+                    <Label x:Name="PreperationTimeLabel"/>
 
-                        <Label x:Name="NoOfPortionsLabel"/>
+                    <Label x:Name="NoOfPortionsLabel"/>
 
-                        <Label Grid.Column="1"
+                    <Label Grid.Column="1"
                            x:Name="IngredientsLabel"
-                           FontSize="Medium"/>
+                           FontSize="Medium"
+                           Margin="0, 15, 0, 0"
+                           TextColor="Black"/>
 
-                        <ListView Grid.Column="0"
+                    <ListView Grid.Column="0"
                               Grid.ColumnSpan="2"
                               x:Name="IngredientListView"
                               ItemsSource="{Binding Ingredients}"
                               ItemTapped="IngredientListView_ItemTapped"
                               CachingStrategy="RecycleElement"
-                              Margin="5"
-                              HorizontalOptions="FillAndExpand">
+                              Margin="0, 10, 0, 0"
+                              HorizontalOptions="FillAndExpand" >                              
 
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <StackLayout HorizontalOptions="FillAndExpand"
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout HorizontalOptions="FillAndExpand"
                                  Orientation="Horizontal">
-                                            <Label  Text="{Binding Name}" />
-                                            <Switch IsToggled="{Binding ForLater}"/>
-                                        </StackLayout>
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
+                                        <Label  Text="{Binding Name}" 
+                                                VerticalTextAlignment="Center" 
+                                                HorizontalTextAlignment="Center"/>
+                                        <Switch IsToggled="{Binding ForLater}" 
+                                                OnColor="#E6B800" 
+                                                HorizontalOptions="EndAndExpand"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
 
-                        <StackLayout Grid.Column="0"
+                    <StackLayout Grid.Column="0"
                                  Grid.ColumnSpan="2">
 
-                            <Grid HorizontalOptions="CenterAndExpand"
+                        <Grid HorizontalOptions="CenterAndExpand"
                               VerticalOptions="EndAndExpand"
-                              BackgroundColor="AliceBlue"
                               MinimumHeightRequest="50">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
 
-                                <Button Grid.Column="0"
+                            <Button Grid.Column="0"
                                     x:Name="ClearAllButton"
                                     WidthRequest="175"
                                     HorizontalOptions="CenterAndExpand"
                                     VerticalOptions="Fill"
-                                    Clicked="ClearAllButton_Clicked"/>
+                                    Margin="0, 10, 5, 5"
+                                    Clicked="ClearAllButton_Clicked"
+                                    Style="{StaticResource ButtonsWithoutMargin}"/>
 
-                                <Button Grid.Column="1"
+                            <Button Grid.Column="1"
                                     x:Name="SaveButton"
                                     WidthRequest="175"
                                     HorizontalOptions="CenterAndExpand"
                                     VerticalOptions="Fill"
-                                    Clicked="SaveButton_Clicked"/>
-                            </Grid>
-                        </StackLayout>
+                                    Margin="5, 10, 0, 5"
+                                    Clicked="SaveButton_Clicked"
+                                    Style="{StaticResource ButtonsWithoutMargin}"/>
+                        </Grid>
+                    </StackLayout>
 
-                        <Button Grid.Column="0"
+                    <Button Grid.Column="0"
                             Grid.ColumnSpan="2"
                             VerticalOptions="EndAndExpand"
                             x:Name="CookButton"
-                            Clicked="CookButton_Clicked"/>
+                            Clicked="CookButton_Clicked"
+                            BackgroundColor="#E6B800"
+                            Padding="3"                        
+                            BorderRadius="10"
+                            BorderColor="#CCA300"
+                            BorderWidth="3"
+                            FontAttributes="Bold"/>
 
-                    </StackLayout>
+                </StackLayout>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
