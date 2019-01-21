@@ -70,6 +70,15 @@ namespace CookIt.Resources.strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose language.
+        /// </summary>
+        internal static string ChooseLang {
+            get {
+                return ResourceManager.GetString("ChooseLang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clear all.
         /// </summary>
         internal static string ClearAll {
@@ -84,6 +93,15 @@ namespace CookIt.Resources.strings {
         internal static string Cook {
             get {
                 return ResourceManager.GetString("Cook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to English.
+        /// </summary>
+        internal static string English {
+            get {
+                return ResourceManager.GetString("English", resourceCulture);
             }
         }
         
@@ -138,6 +156,15 @@ namespace CookIt.Resources.strings {
         internal static string NoRecipes {
             get {
                 return ResourceManager.GetString("NoRecipes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Polski.
+        /// </summary>
+        internal static string Polish {
+            get {
+                return ResourceManager.GetString("Polish", resourceCulture);
             }
         }
         

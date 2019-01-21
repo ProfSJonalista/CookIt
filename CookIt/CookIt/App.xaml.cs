@@ -12,13 +12,13 @@ namespace CookIt
     {
         public static string DatabaseLocation = string.Empty;
         private DatabaseInitiateService _databaseInitiateService = new DatabaseInitiateService();
+        private LanguageService _languageService = new LanguageService();
 
         public App()
         {
             InitializeComponent();
-
-            //TODO - create service to get culture info
-            var cultureInfo = new System.Globalization.CultureInfo("pl");
+            
+            var cultureInfo = _languageService.GetCultureInfo();
             Strings.Culture = cultureInfo;
             Ingredients.Culture = cultureInfo;
 
@@ -29,8 +29,7 @@ namespace CookIt
         {
             InitializeComponent();
 
-            //TODO - create service to get culture info
-            var cultureInfo = new System.Globalization.CultureInfo("pl");
+            var cultureInfo = _languageService.GetCultureInfo();
             Strings.Culture = cultureInfo;
             Ingredients.Culture = cultureInfo;
 
