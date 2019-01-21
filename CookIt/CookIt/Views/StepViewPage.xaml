@@ -1,23 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CookIt.Views.StepViewPage">
+             x:Class="CookIt.Views.StepViewPage"
+             Style="{StaticResource PageStyle}">
     <ContentPage.Content>
-        <StackLayout Margin="10">
+        <StackLayout Margin="20">
 
             <Label x:Name="CounterLabel"
                    HorizontalOptions="CenterAndExpand"
-                   FontSize="Large"/>
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="Black"/>
 
             <Label x:Name="StepDescriptionLabel"
                    HorizontalOptions="CenterAndExpand"
-                   VerticalOptions="FillAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="Medium"
+                   Margin="25, 0, 25, 0"
                    Text="{Binding Description}"/>
 
             <ListView x:Name="TimerSpansList"
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand"
-                      BackgroundColor="AliceBlue"
                       HasUnevenRows="True"
                       SeparatorVisibility="None"
                       RowHeight="40"
@@ -27,9 +31,16 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
-                                <Label Text="Some cool label"/>
+                                <Label Text="Time"
+                                       HorizontalOptions="CenterAndExpand"
+                                       Margin="0, 20, 0, 0"/>
                                 <Button Clicked="Button_Clicked"
-                                            Text="TimerButton"/>
+                                        Text="TimerButton"
+                                        BackgroundColor="#99cc00"
+                                        Margin="25, 0, 25, 0"
+                                        BorderColor="#86B300"
+                                        BorderRadius="15"
+                                        BorderWidth="3"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -48,13 +59,18 @@
                         WidthRequest="175"
                         HorizontalOptions="End"
                         x:Name="PreviousStepButton"
-                        Clicked="PreviousStepButton_Clicked"/>
+                        Clicked="PreviousStepButton_Clicked"
+                        Style="{StaticResource ButtonsWithoutMargin}"
+                        Margin="0, 10, 5, 0"/>
 
                 <Button Grid.Column="1"
                         WidthRequest="175"
                         HorizontalOptions="Start"
                         x:Name="NextStepButton"
-                        Clicked="NextStepButton_Clicked"/>
+                        Clicked="NextStepButton_Clicked"
+                        Margin="5, 10, 0, 0"
+                        Style="{StaticResource ButtonsWithoutMargin}"
+                        FontAttributes="Bold"/>
 
             </Grid>
         </StackLayout>

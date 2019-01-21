@@ -5,41 +5,44 @@
              Style="{StaticResource PageStyle}">
     <StackLayout x:Name="containerStackLayout"
                  HorizontalOptions="FillAndExpand"
-                 Margin="20, 20, 20, 5"
-                 >
+                 Margin="20, 15, 20, 5" >                 
 
         <Label x:Name="ChooseIngredientsLabel" 
                FontSize="Medium"
                TextColor="Black"
-               Margin="0, 0, 0, 20"/>
+               Margin="0, 0, 0, 15"/>
         
         <ListView x:Name="MyListView"
             ItemsSource="{Binding Ingredients}"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement"
-            HorizontalOptions="FillAndExpand"
-            SeparatorColor="#C9B869" >
-           
-            <ListView.ItemTemplate>
+            HorizontalOptions="FillAndExpand" >
+            
+                       <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout HorizontalOptions="FillAndExpand"
                                  Orientation="Horizontal">
-                            <Label  Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            
+                            <Label  Text="{Binding Name}" 
+                                    VerticalTextAlignment="Center" 
+                                    HorizontalTextAlignment="Center"/>
                             <Switch x:Name="filterSwitch" 
                                 IsToggled="{Binding Filter}"
                                 Margin="10, 0, 0, 0"
-                                OnColor="#C9B869"                                    
-                                />
+                                OnColor="#E6B800" 
+                                HorizontalOptions="EndAndExpand"  />                          
+                               
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-
+            
         </ListView>
         
         <Button x:Name="SearchButton"
                 Clicked="SearchButton_Clicked"
-                Style="{StaticResource StartPageButtons}"/>
+                Style="{StaticResource Buttons}"
+                Margin="0, 15, 0, 15"/>
     </StackLayout>
 </ContentPage>

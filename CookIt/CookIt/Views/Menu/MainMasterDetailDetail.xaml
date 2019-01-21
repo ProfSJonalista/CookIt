@@ -7,21 +7,20 @@
              >
     <ScrollView>
         <StackLayout HorizontalOptions="FillAndExpand"
-            Margin="20" >         
+            Margin="30" >         
                      
             <Image Source="logo.jpg" 
                HorizontalOptions="FillAndExpand"
                Scale="1"
-               Margin="0, 0, 0, 30"
-               />
+               Margin="0, -10, 0, 10"  />              
 
             <Button x:Name="RecipeSearchButton"                
                 Clicked="RecipeSearchButton_ClickedAsync"               
-                Style="{StaticResource StartPageButtons}"/>
+                Style="{StaticResource Buttons}"/>
 
             <Button x:Name="ViewAllRecipesButton"
                 Clicked="ViewAllRecipes_Clicked"                
-                Style="{StaticResource StartPageButtons}"/>
+                Style="{StaticResource Buttons}"/>
                
         </StackLayout>
     </ScrollView>

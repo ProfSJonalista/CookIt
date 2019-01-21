@@ -7,17 +7,14 @@
         <Label x:Name="NoRecipeLabel"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="CenterAndExpand"
-               FontSize="Large" />
-                              
+               FontSize="Large" />                              
 
         <ListView x:Name="MyListView"
             ItemsSource="{Binding Items}"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement"            
-            SeparatorColor="#E5D89E"                  
             RowHeight="80" >  
-            
-            
+                        
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ImageCell ImageSource="{Binding ImageName}" 
