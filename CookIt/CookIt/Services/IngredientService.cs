@@ -11,6 +11,7 @@ namespace CookIt.Services
 {
     public class IngredientService
     {
+        //returns list with ingredient names for IngredientChoosePage
         public List<IngredientChooseViewModel> GetIngredientList()
         {
             List<IngredientChooseViewModel> ingredientVMList = new List<IngredientChooseViewModel>();

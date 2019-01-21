@@ -8,6 +8,7 @@ using System.Text;
 
 namespace CookIt.Services
 {
+    //if DB is empty, it gets initiated
     public class DatabaseInitiateService
     {
         private DatabaseRepository _databaseRepository;

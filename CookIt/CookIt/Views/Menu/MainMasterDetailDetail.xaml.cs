@@ -20,10 +20,11 @@ namespace CookIt.Views.Menu
             RecipeSearchButton.Text = Strings.RecipeSearch;
             ViewAllRecipesButton.Text = Strings.ViewAllRecipes;
         }
-
+        
+        //opens new IngredientChoosePage to choose filters
         private async void RecipeSearchButton_ClickedAsync(object sender, EventArgs e) => await Navigation.PushAsync(new IngredientChoosePage());
 
-
+        //opens new RecipeListViewPage with no filters
         private async void ViewAllRecipes_Clicked(object sender, EventArgs e) => await Navigation.PushAsync(new RecipeListViewPage());
     }
 }

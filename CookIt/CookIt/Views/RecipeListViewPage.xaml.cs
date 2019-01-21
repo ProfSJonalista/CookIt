@@ -19,6 +19,7 @@ namespace CookIt.Views
         public List<RecipeViewModel> Items { get; set; }
         private FilterService _filterService = new FilterService();
 
+        //gets unfiltered recipes
         public RecipeListViewPage()
         {
             InitializeComponent();
@@ -27,14 +28,27 @@ namespace CookIt.Views
             SetItemVisibility();
         }
 
-        public RecipeListViewPage(bool userChoice)
+        //gets saved for later recipes
+        public RecipeListViewPage(bool savedForLater)
         {
             InitializeComponent();
-            Items = _filterService.GetSavedForLaterRecipes(userChoice);
+            Items = _filterService.GetSavedForLaterRecipes(savedForLater);
             MyListView.ItemsSource = Items;
             SetItemVisibility();
         }
 
+        //constructor with filter list - gets recipes based on requirements in filterlist
+        public RecipeListViewPage(List<IngredientChooseViewModel> filterList)
+        {
+            InitializeComponent();
+            Items = _filterService.GetFilteredRecipes(filterList);
+            MyListView.ItemsSource = Items;
+            SetItemVisibility();
+        }
+
+        //if there is no items in list
+        //ListView is hidden and information is shown
+        //there is no Recipes on current filter requirements
         private void SetItemVisibility()
         {
             if(Items == null || Items.Count == 0)
@@ -51,14 +65,7 @@ namespace CookIt.Views
             }
         }
 
-        public RecipeListViewPage(List<IngredientChooseViewModel> filterList)
-        {
-            InitializeComponent();
-            Items = _filterService.GetFilteredRecipes(filterList);
-            MyListView.ItemsSource = Items;
-            SetItemVisibility();
-        }
-
+        //opens RecipeViewPage
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (e.Item == null)
