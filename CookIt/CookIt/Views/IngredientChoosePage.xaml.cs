@@ -32,6 +32,7 @@ namespace CookIt.Views
 			MyListView.ItemsSource = IngredientList;
         }
 
+        //sets text on UI controls
         private void SetComponents()
         {
             ChooseIngredientsLabel.Text = Strings.ChooseIngredients;
@@ -47,6 +48,7 @@ namespace CookIt.Views
             ((ListView)sender).SelectedItem = null;
         }
 
+        //opens new RecipeListViewPage
         private async void SearchButton_Clicked(object sender, EventArgs e) => 
             await Navigation.PushAsync(
                 new RecipeListViewPage(

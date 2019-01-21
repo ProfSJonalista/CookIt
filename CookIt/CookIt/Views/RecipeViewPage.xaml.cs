@@ -28,6 +28,7 @@ namespace CookIt.Views
             BindingContext = Recipe;
         }
 
+        //sets texts on UI controls
         private void SetupUI()
         {
             PreperationTimeLabel.Text = Strings.PreparationTime + " " + Recipe.PreparationTime;
@@ -38,6 +39,8 @@ namespace CookIt.Views
             ClearAllButton.Text = Strings.ClearAll;
         }
 
+        //unchecks tapped ItemList
+        //without it, item tapped would be orange and there would be no way to uncolor it
         private void IngredientListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (e.Item == null)
@@ -45,7 +48,8 @@ namespace CookIt.Views
             
             ((ListView)sender).SelectedItem = null;
         }
-
+        
+        //opens StepViewPage
         private async void CookButton_Clicked(object sender, EventArgs e) => await Navigation.PushAsync(new StepViewPage(Recipe.Steps));
 
         //TODO - refresh view
@@ -58,6 +62,7 @@ namespace CookIt.Views
             _recipeService.SaveIngredientsForLater(Recipe);
         }
 
+        //saves recipe for later
         private void SaveButton_Clicked(object sender, EventArgs e) =>_recipeService.SaveIngredientsForLater(Recipe);
     }
 }

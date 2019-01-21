@@ -10,25 +10,31 @@ namespace CookIt.Repository
 {
     public class DatabaseRepository
     {
+        //Inserts full recipe into SQLiteDB
         public void Insert(Recipe recipe)
         {
-            var recipeId = InsertToDB(recipe);
+            var recipeId = InsertToDB(recipe); //gets recipeId
 
+            //binds recipeId to each ingredient and inserts into db
             recipe.Ingredients.ForEach(ingredient =>
             {
                 ingredient.Recipe = recipe.Id;
                 InsertToDB(ingredient);
             });
 
+            //binds recipeId to each step and inserts into db
             recipe.Steps.ForEach(step =>
             {
                 step.Recipe = recipe.Id;
                 InsertToDB(step);
             });
 
+            //resets id
             recipeId = 0;
         }
 
+        //inserts object of type T to db
+        //generic method
         private int InsertToDB<T>(T ObjectToInsert)
         {
             using (var db = new SQLiteConnection(App.DatabaseLocation))
@@ -38,6 +44,7 @@ namespace CookIt.Repository
             }
         }
 
+        //checks if db is empty
         public bool CheckIfDatabaseIsEmpty()
         {
             using (var db = new SQLiteConnection(App.DatabaseLocation))
@@ -51,6 +58,7 @@ namespace CookIt.Repository
             }
         }
 
+        //gets recipes based on current culture
         internal List<Recipe> GetRecipes(string cultureInfo)
         {
             List<Recipe> recipesToReturn = new List<Recipe>();
@@ -69,11 +77,14 @@ namespace CookIt.Repository
             return recipesToReturn;
         }
 
+        //updates ingredient list
         internal void SaveIngredientsForLater(List<Ingredient> ingredients)
         {
             ingredients.ForEach(x => Update(x));
         }
 
+        //updates object of type T
+        //generic method
         public void Update<T>(T objectToUpdate)
         {
             using (var db = new SQLiteConnection(App.DatabaseLocation))

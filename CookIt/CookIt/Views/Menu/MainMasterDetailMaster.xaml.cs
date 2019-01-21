@@ -32,6 +32,7 @@ namespace CookIt.Views.Menu
 
             public MainMasterDetailMasterViewModel()
             {
+                //sets items in hamburger menu
                 MenuItems = new ObservableCollection<MainMasterDetailMenuItem>(new[]
                 {
                     new MainMasterDetailMenuItem { Id = 0, Title = Strings.MainPage },

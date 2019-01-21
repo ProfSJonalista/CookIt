@@ -7,6 +7,7 @@ namespace CookIt.Services.Helpers
 {
     public class Converter
     {
+        //Converts string to TimeSpan list
         public List<TimeSpan> ConvertStringToTimeSpanList(string timeSpanAsString)
         {
             List<TimeSpan> timeSpansToReturn = new List<TimeSpan>();

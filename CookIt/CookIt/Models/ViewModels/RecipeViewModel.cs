@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+//Recipe view models
 namespace CookIt.Models.ViewModels
 {
     public class RecipeViewModel

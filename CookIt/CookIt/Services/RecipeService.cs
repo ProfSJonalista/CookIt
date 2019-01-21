@@ -12,15 +12,14 @@ namespace CookIt.Services
     {
         private MapperService _mapperService;
         private DatabaseRepository _databaseRepository;
-        private RecipeServiceHelper _recipeServiceHelper;
 
         public RecipeService()
         {
             _mapperService = new MapperService();
             _databaseRepository = new DatabaseRepository();
-            _recipeServiceHelper = new RecipeServiceHelper();
         }
 
+        //returns mapped recipe entities to view models
         public List<RecipeViewModel> GetRecipeViewModels(List<Recipe> recipesToMap)
         {
             List<RecipeViewModel> mappedRecipes = new List<RecipeViewModel>();
@@ -29,14 +28,10 @@ namespace CookIt.Services
             return mappedRecipes;
         }
 
+        //updates ingredients to save for later
         public void SaveIngredientsForLater(RecipeViewModel recipeViewModel)
         {
             _databaseRepository.SaveIngredientsForLater(_mapperService.MapIngredientList(recipeViewModel.Ingredients));
-        }
-
-        internal void Update(RecipeViewModel recipe)
-        {
-            _databaseRepository.Update(_mapperService.MapRecipe(recipe));
         }
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 
 namespace CookIt.Services
 {
+    //service to map entities to view models
+    //servive to map view models to entities
     public class MapperService
     {
         private Helpers.Converter _converter;

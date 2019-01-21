@@ -32,18 +32,23 @@ namespace CookIt.Views
             AdjustButtons();
         }
 
+        //adjust buttons to current step
         private void AdjustButtons()
         {
+            //if current step is first, PreviousButton is disabled
             if (CurrentStep.StepNumber == 1)
             {
                 PreviousStepButton.IsEnabled = false;
                 NextStepButton.IsEnabled = true;
             }
+            //if current step equals to number of steps it means it's last step
+            //and NextStepButton is disabled
             else if (CurrentStep.StepNumber == Steps.Count)
             {
                 PreviousStepButton.IsEnabled = true;
                 NextStepButton.IsEnabled = false;
             }
+            //in all other cases, both of buttons are enabled
             else
             {
                 PreviousStepButton.IsEnabled = true;
@@ -51,6 +56,7 @@ namespace CookIt.Views
             }
         }
 
+        //switches content when button is clicked
         private void PreviousStepButton_Clicked(object sender, EventArgs e)
         {
             if (PreviousStepButton.IsEnabled)
@@ -64,6 +70,7 @@ namespace CookIt.Views
             AdjustButtons();
         }
 
+        //switches content when button is clicked
         private void NextStepButton_Clicked(object sender, EventArgs e)
         {
             if (NextStepButton.IsEnabled)
@@ -76,11 +83,14 @@ namespace CookIt.Views
             AdjustButtons();
         }
 
+        //updates UI
         private void UpdateUI(int stepNumber)
         {
+            //changes CounterLabel
             CounterLabel.Text = String.Format(Strings.StepCounter, stepNumber, Steps.Count);
             var timerSpanListVisible = CurrentStep.TimeSpans.Count > 0;
 
+            //sets visibility of timer list
             if (timerSpanListVisible)
             {
                 TimerSpansList.HeightRequest = TimerSpansList.RowHeight * CurrentStep.TimeSpans.Count; /*(40 * CurrentStep.TimeSpans.Count) + (10 * CurrentStep.TimeSpans.Count);*/

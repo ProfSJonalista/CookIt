@@ -19,6 +19,7 @@ namespace CookIt.Views.Menu
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
+        //views new DetailPage
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as MainMasterDetailMenuItem;
@@ -28,15 +29,16 @@ namespace CookIt.Views.Menu
             var page = (Page)Activator.CreateInstance(item.TargetType);
             page.Title = item.Title;
 
-            Detail = new NavigationPage(GetDetailPage(item));
+            Detail = new NavigationPage(GetDetailPage(item.Id));
             IsPresented = false;
 
             MasterPage.ListView.SelectedItem = null;
         }
 
-        private Page GetDetailPage(MainMasterDetailMenuItem item)
+        //returns appropiate Page based on itemId
+        private Page GetDetailPage(int itemId)
         {
-            switch (item.Id)
+            switch (itemId)
             {
                 case 0:
                     return new MainMasterDetailDetail();
