@@ -70,7 +70,7 @@ namespace CookIt.Resources.strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wybierz język.
+        ///   Looks up a localized string similar to Choose language.
         /// </summary>
         internal static string ChooseLang {
             get {

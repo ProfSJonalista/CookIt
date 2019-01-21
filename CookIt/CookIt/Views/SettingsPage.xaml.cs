@@ -26,8 +26,8 @@ namespace CookIt.Views
             PolishLangLabel.Text = Strings.Polish;
 
             _languageService = new LanguageService();
-            var cultureCode = _languageService.GetCultureInfo().ToString();
-            UpdateUI(cultureCode);
+            _cultureCode = _languageService.GetCultureInfo().ToString();
+            UpdateUI(_cultureCode);
 		}
 
         private void UpdateUI(string cultureCode)
@@ -45,11 +45,6 @@ namespace CookIt.Views
                     _cultureCode = "pl";
                     break;
             }
-        }
-
-        private void Switch_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            UpdateUI(_cultureCode);
         }
     }
 }

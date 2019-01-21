@@ -5,7 +5,6 @@
              Style="{StaticResource PageStyle}">
     <ContentPage.Content>
         <StackLayout>
-
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -24,17 +23,16 @@
                        x:Name="ChooseLanguageLabel" 
                        HorizontalOptions="CenterAndExpand"
                        FontSize="Large"/>
-                
+
                 <Label Grid.Column="0"
                        Grid.Row="1"
                        x:Name="EnglishLangLabel"
                        HorizontalOptions="Start"/>
-                
+
                 <Switch Grid.Column="1"
                         Grid.Row="1"
                         x:Name="EnglishLangSwitch"
-                        HorizontalOptions="CenterAndExpand"
-                        PropertyChanged="Switch_PropertyChanged"/>
+                        HorizontalOptions="CenterAndExpand"/>
 
                 <Label Grid.Column="0"
                        Grid.Row="2"
@@ -44,8 +42,7 @@
                 <Switch Grid.Column="1"
                         Grid.Row="2"
                         x:Name="PolishLangSwitch"
-                        HorizontalOptions="CenterAndExpand"
-                        PropertyChanged="Switch_PropertyChanged"/>
+                        HorizontalOptions="CenterAndExpand"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
